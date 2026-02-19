@@ -24,6 +24,7 @@
         .citation { font-family: 'Courier New', monospace; opacity: 0.7; font-size: 0.7em; vertical-align: super; color: #94a3b8; font-weight: bold; }
         .tech-pill { font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); margin-right: 6px; display: inline-block; color: #93c5fd; font-weight: 600; }
         .code-block { font-family: 'Fira Code', monospace; background: rgba(0,0,0,0.4); border-radius: 6px; padding: 2px 6px; font-size: 0.8em; border: 1px solid rgba(255,255,255,0.1); }
+        .badge-dev { background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.3); color: #facc15; font-size: 0.6rem; padding: 2px 6px; border-radius: 99px; font-weight: 700; uppercase; display: inline-block; margin-left: 8px; vertical-align: middle; letter-spacing: 0.05em; }
     </style>
 </head>
 <body onload="startTimer()">
@@ -44,10 +45,10 @@
             </div>
         </div>
         <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-bold opacity-80">
-            <a href="#problem" class="hover:text-blue-400 transition">The Hallucination Problem</a>
+            <a href="#problem" class="hover:text-blue-400 transition">Hallucinations</a>
             <a href="#methodology" class="hover:text-blue-400 transition">Agentic Architecture</a>
-            <a href="#results" class="hover:text-blue-400 transition">Performance Metrics</a>
-            <a href="#innovations" class="hover:text-blue-400 transition">Key Innovations</a>
+            <a href="#results" class="hover:text-blue-400 transition">Metrics</a>
+            <a href="#future" class="hover:text-yellow-400 transition text-yellow-500/80">Future Roadmap</a>
         </div>
     </nav>
 
@@ -57,7 +58,7 @@
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-500/5 blur-[120px] -z-10 rounded-full"></div>
             
             <div class="inline-block px-4 py-1 border border-slate-700 bg-slate-900/50 rounded-full text-slate-400 text-[10px] font-mono mb-8 uppercase tracking-widest">
-                ID: 2427030490 • Second Year Capstone Project
+                ID: 2427030490 • Final Year Capstone Project
             </div>
             
             <h1 class="text-6xl md:text-8xl font-extrabold mb-8 uppercase leading-none tracking-tight">
@@ -66,7 +67,7 @@
             </h1>
             
             <p class="text-slate-300 max-w-4xl mx-auto text-xl leading-relaxed font-light mb-12">
-                "Standard LLMs rely on probabilistic token prediction, leading to plausible but incorrect code. PatchPilot replaces this guessing game with <span class="text-white font-bold">Deterministic Grounding</span>, using Agentic RAG to verify every line of code against official documentation."
+                "Standard LLMs rely on probabilistic guessing. PatchPilot replaces this with <span class="text-white font-bold">Deterministic Grounding</span>, using Agentic RAG to verify code against official documentation."
             </p>
             
             <div class="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -90,26 +91,25 @@
                         <span class="citation text-blue-800">[2]</span>
                     </div>
                     <p class="text-xs text-slate-400 mt-3 leading-snug">
-                        First-pass compilation success rate achieved through RAG-based context injection.
+                        Current success rate achieved through RAG-based context injection (Stage 1 & 2).
                     </p>
                 </div>
                 
-                <div class="glass p-8 rounded-3xl relative overflow-hidden group border-t border-green-900">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110"><i class="fas fa-rocket text-5xl"></i></div>
-                    <p class="text-green-400 text-xs font-bold uppercase tracking-widest mb-3">Validation Efficiency</p>
+                <div class="glass p-8 rounded-3xl relative overflow-hidden group border-t border-yellow-600 border-dashed bg-yellow-900/5">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110"><i class="fas fa-tools text-5xl"></i></div>
+                    <p class="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-3">In Development</p>
                     <div class="flex items-baseline gap-2">
-                        <p class="text-4xl font-black text-green-400">91.3%</p>
-                        <span class="citation text-green-800">[3]</span>
+                        <p class="text-3xl font-black text-yellow-400">Auto-Fix</p>
                     </div>
                     <p class="text-xs text-slate-400 mt-3 leading-snug">
-                        Final success rate after autonomous Docker-based reflection loops (Max 3 retries).
+                        Stage 3 (Reflection Loop) is currently in active development to push accuracy >90%.
                     </p>
                 </div>
             </div>
             
             <div class="mt-6 text-center border-t border-slate-800/50 pt-4 max-w-2xl mx-auto">
                 <p class="text-[10px] text-slate-600 font-mono">
-                    <strong>Sources:</strong> [1] Internal benchmark "MigrateBench-v1" (n=150 files). [2] Verified via AST compilation checks. [3] Includes autonomous error correction cycles.
+                    <strong>Sources:</strong> [1] Internal benchmark "MigrateBench-v1" (n=150 files). [2] Verified via AST compilation checks.
                 </p>
             </div>
         </section>
@@ -122,11 +122,11 @@
                 </div>
                 
                 <p class="text-slate-400 leading-relaxed mb-6 text-base">
-                    When developers ask LLMs to migrate code (e.g., upgrading from Pydantic V1 to V2), the model relies on <strong>Parametric Memory</strong>—information frozen at the time of its training. Since models like Llama 3.2 have training cutoffs (Dec 2023), they lack "knowledge" of breaking changes introduced in 2024/2025.
+                    When developers ask LLMs to migrate code (e.g., upgrading from Pydantic V1 to V2), the model relies on <strong>Parametric Memory</strong>. Since models like Llama 3.2 have training cutoffs, they lack "knowledge" of breaking changes introduced recently.
                 </p>
                 
                 <p class="text-slate-400 leading-relaxed mb-6 text-base">
-                    This leads to a specific type of hallucination we call the <strong>"Confident Guess"</strong>: The model invents a method that sounds plausible but does not exist in the library, causing immediate production crashes.
+                    This leads to a specific type of hallucination we call the <strong>"Confident Guess"</strong>: The model invents a method that sounds plausible but does not exist, causing production crashes.
                 </p>
 
                 <div class="p-5 bg-red-950/30 border border-red-500/20 rounded-xl mt-4">
@@ -137,14 +137,6 @@
                             <div>
                                 <code class="text-xs text-red-200 block bg-black/40 px-2 py-1 rounded">user.dict()</code>
                                 <p class="text-[10px] text-slate-500 mt-1">Model predicts this V1 method still exists.</p>
-                            </div>
-                        </div>
-                        <div class="h-px bg-red-500/20 w-full my-1"></div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <div>
-                                <code class="text-xs text-green-200 block bg-black/40 px-2 py-1 rounded">user.model_dump()</code>
-                                <p class="text-[10px] text-slate-500 mt-1">Actual V2 method (often unknown to the model).</p>
                             </div>
                         </div>
                     </div>
@@ -165,26 +157,18 @@
                                 <span class="text-xs text-slate-500">We inject precise API signatures from official "Migration Guides" directly into the context window.</span>
                             </div>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-search text-blue-500 mt-1"></i>
-                            <div>
-                                <span class="block text-slate-200 font-bold text-sm">Version Specificity</span>
-                                <span class="text-xs text-slate-500">The system ignores its training weights and prioritizes the retrieved context, effectively setting temperature to 0 for API facts.</span>
-                            </div>
-                        </li>
                     </ul>
                 </div>
 
                 <div class="glass p-10 rounded-[2.5rem] border-l-4 border-purple-500">
                     <h3 class="text-purple-400 font-bold text-sm uppercase tracking-widest mb-4">The Tech Stack</h3>
                     <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="tech-pill text-purple-300">LangGraph (Orchestration)</span>
+                        <span class="tech-pill text-purple-300">LangGraph</span>
                         <span class="tech-pill text-purple-300">FAISS (Vector DB)</span>
-                        <span class="tech-pill text-purple-300">Llama 3.2 (Reasoning)</span>
-                        <span class="tech-pill text-purple-300">AST (Python Parsing)</span>
+                        <span class="tech-pill text-purple-300">Llama 3.2</span>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed">
-                        We utilize a <strong>Multi-Agent Architecture</strong>. A 'Researcher Agent' scrapes documentation, a 'Planner Agent' creates the migration strategy, and a 'Coder Agent' executes it. This separation of concerns prevents the "context pollution" common in single-prompt solutions.
+                        We utilize a <strong>Multi-Agent Architecture</strong>. A 'Researcher Agent' scrapes documentation, a 'Planner Agent' creates the migration strategy, and a 'Coder Agent' executes it.
                     </p>
                 </div>
             </div>
@@ -194,7 +178,7 @@
             <div class="text-center">
                 <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">System <span class="text-blue-500">Methodology</span></h2>
                 <p class="text-slate-400 max-w-3xl mx-auto text-sm">
-                    PatchPilot employs a sophisticated <strong>Loop-Based Agentic Pipeline</strong>. Unlike linear "Input -> Output" tools, our system thinks, plans, codes, and then—crucially—verifies its own work.
+                    PatchPilot employs a sophisticated <strong>Agentic Pipeline</strong>. The first two stages are fully operational, with a third validation stage currently in prototyping.
                 </p>
             </div>
             
@@ -204,20 +188,12 @@
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <h3 class="font-bold text-xl text-slate-100 mb-2">1. Contextual Analysis</h3>
-                    <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6">AST Parsing & Retrieval</p>
+                    <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6">Operational</p>
                     
                     <div class="space-y-4 flex-grow">
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            The system begins by parsing the input code into an <strong>Abstract Syntax Tree (AST)</strong>. This allows it to identify specific library imports (e.g., `from pydantic import BaseModel`) and ignore irrelevant code.
+                            The system parses input code into an <strong>Abstract Syntax Tree (AST)</strong> to identify imports. It then queries a <strong>Vector Database (FAISS)</strong> for the <em>target</em> version's documentation using semantic search.
                         </p>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            It then queries a <strong>Vector Database (FAISS)</strong> containing indexed chunks of the <em>target</em> version's documentation. We use semantic search to find the exact "Migration Guide" section relevant to the detected AST nodes.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-slate-700/50">
-                        <p class="text-[10px] text-slate-500 font-mono mb-2"><strong>Input:</strong> Legacy Python File</p>
-                        <p class="text-[10px] text-slate-500 font-mono"><strong>Output:</strong> Relevant Doc Chunks + AST Graph</p>
                     </div>
                 </div>
 
@@ -226,45 +202,37 @@
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3 class="font-bold text-xl text-slate-100 mb-2">2. Plan & Synthesize</h3>
-                    <p class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-6">CoT Reasoning</p>
+                    <p class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-6">Operational</p>
                     
                     <div class="space-y-4 flex-grow">
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            Before writing code, the <strong>Planner Agent</strong> generates a step-by-step strategy using <strong>Chain-of-Thought (CoT)</strong> prompting. It maps old patterns to new ones based <em>strictly</em> on the retrieved chunks.
+                            The <strong>Planner Agent</strong> generates a step-by-step strategy using <strong>Chain-of-Thought (CoT)</strong> prompting. It enforces a strict constraint: <strong>"No code without citation,"</strong> requiring source IDs for every change.
                         </p>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            This stage enforces a strict constraint: <strong>"No code without citation."</strong> The model must explicitly reference the documentation ID for every API change it proposes.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-slate-700/50">
-                        <p class="text-[10px] text-slate-500 font-mono mb-2"><strong>Model:</strong> Llama 3.2 (Groq/Local)</p>
-                        <p class="text-[10px] text-slate-500 font-mono"><strong>Output:</strong> Detailed Migration Plan</p>
                     </div>
                 </div>
 
-                <div class="glass p-8 rounded-[2rem] border-t-4 border-green-500 bg-gradient-to-b from-green-500/5 to-transparent flex flex-col">
-                    <div class="mb-6 bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center text-green-500 text-2xl">
-                        <i class="fas fa-sync-alt animate-spin-slow"></i>
+                <div class="glass p-8 rounded-[2rem] border-t-4 border-yellow-500 bg-gradient-to-b from-yellow-500/5 to-transparent flex flex-col relative overflow-hidden">
+                    <div class="absolute top-3 right-3">
+                        <span class="badge-dev">BETA</span>
+                    </div>
+                    <div class="mb-6 bg-yellow-500/10 w-16 h-16 rounded-2xl flex items-center justify-center text-yellow-500 text-2xl">
+                        <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3 class="font-bold text-xl text-slate-100 mb-2">3. Verified Execution</h3>
-                    <p class="text-xs font-bold text-green-400 uppercase tracking-widest mb-6">The Reflection Loop</p>
+                    <p class="text-xs font-bold text-yellow-400 uppercase tracking-widest mb-6">Under Development</p>
                     
                     <div class="space-y-4 flex-grow">
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            The generated code is executed in an isolated <strong>Docker Sandbox</strong>. The system runs `pytest` and static analysis tools (`mypy`).
+                            We are currently building a <strong>Docker Sandbox</strong> module. The goal is to run `pytest` automatically and feed error tracebacks to a "Reflection Agent" for autonomous self-healing.
                         </p>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            If errors occur, the <strong>Reflection Agent</strong> captures the `stderr` output, analyzes the traceback, and autonomously attempts to patch the code. This loop repeats up to 3 times, solving runtime issues without human intervention.
+                        <p class="text-sm text-yellow-500/70 italic text-[10px] mt-2 border-l-2 border-yellow-500/30 pl-3">
+                            Current Status: Prototyping error-capture logic.
                         </p>
                     </div>
                     
-                    <div class="mt-8 flex gap-3">
-                        <button onclick="openModal('videoModal')" class="flex-1 py-3 bg-green-500/20 hover:bg-green-500/30 text-green-400 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-green-500/30 transition-all">
-                            <i class="fas fa-play me-2"></i>Demo
-                        </button>
-                        <button onclick="openModal('graphModal')" class="flex-1 py-3 bg-slate-700/50 hover:bg-slate-700 text-slate-300 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-slate-600 transition-all">
-                            <i class="fas fa-project-diagram me-2"></i>Graph
+                    <div class="mt-8">
+                         <button onclick="openModal('graphModal')" class="w-full py-3 bg-slate-700/50 hover:bg-slate-700 text-slate-300 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-slate-600 transition-all">
+                            <i class="fas fa-project-diagram me-2"></i>View Architecture
                         </button>
                     </div>
                 </div>
@@ -276,27 +244,26 @@
                 <div class="max-w-xl">
                     <h2 class="text-3xl font-black uppercase tracking-tight mb-4">Validation <span class="text-blue-500">Results</span></h2>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        We tested PatchPilot against a dataset of 150 Python files ("MigrateBench-v1") involving Pydantic V1->V2 and Pandas 1.x->2.x migrations. The primary metric is <strong>Pass@1</strong> (does the code compile and run on the first try?).
+                        We tested PatchPilot (Stages 1 & 2) against a dataset of 150 Python files ("MigrateBench-v1"). The primary metric is <strong>Pass@1</strong> (compilation success on first try).
                     </p>
                 </div>
                 <div class="text-right hidden md:block">
                     <p class="text-xs text-slate-500 font-mono mb-1">Dataset: MigrateBench-v1 (Internal)</p>
-                    <p class="text-xs text-slate-500 font-mono mb-1">Model Backbone: Llama-3-70b</p>
-                    <p class="text-xs text-slate-500 font-mono">Date: Jan-Feb 2026</p>
+                    <p class="text-xs text-slate-500 font-mono mb-1">Metric: Compilation Success</p>
                 </div>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="h-96 w-full relative p-4 bg-slate-900/30 rounded-3xl border border-slate-800">
                     <canvas id="resultsChart"></canvas>
-                    <p class="absolute bottom-4 left-0 w-full text-center text-[10px] text-slate-600 italic">Fig 1. Comparative analysis of compilation success rates.</p>
+                    <p class="absolute bottom-4 left-0 w-full text-center text-[10px] text-slate-600 italic">Fig 1. Comparative analysis of current system vs baseline.</p>
                 </div>
                 
                 <div class="space-y-8">
                     <div class="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 flex justify-between items-center group hover:border-blue-500/30 transition-all">
                         <div class="flex flex-col">
                             <span class="text-slate-200 font-bold text-sm mb-1">RAG-Grounded Success</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-wider">First Attempt Accuracy</span>
+                            <span class="text-[10px] text-slate-500 uppercase tracking-wider">Current Accuracy</span>
                         </div>
                         <div class="text-right">
                             <span class="text-blue-400 font-mono font-black text-4xl">84.6%</span>
@@ -304,21 +271,21 @@
                         </div>
                     </div>
 
-                    <div class="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 flex justify-between items-center group hover:border-green-500/30 transition-all">
+                    <div class="p-8 rounded-3xl bg-yellow-900/10 border border-yellow-600/30 border-dashed flex justify-between items-center opacity-80">
                         <div class="flex flex-col">
-                            <span class="text-slate-200 font-bold text-sm mb-1">With Reflection Loop</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-wider">Self-Healing Accuracy</span>
+                            <span class="text-yellow-500 font-bold text-sm mb-1">With Reflection Loop</span>
+                            <span class="text-[10px] text-yellow-600/70 uppercase tracking-wider font-bold">Projected / In Beta</span>
                         </div>
                         <div class="text-right">
-                            <span class="text-green-400 font-mono font-black text-4xl">91.3%</span>
-                            <p class="text-[10px] text-green-400 mt-1">Autonomous Correction</p>
+                            <span class="text-slate-500 font-mono font-black text-4xl">--.-%</span>
+                            <p class="text-[10px] text-slate-500 mt-1">Coming Soon</p>
                         </div>
                     </div>
 
                     <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50">
                         <p class="text-xs text-slate-400 leading-relaxed font-mono">
-                            <strong>Note on Statistical Significance:</strong> 
-                            The baseline (standard Llama 3.2 Zero-Shot) achieved only a 62% success rate, largely due to hallucinated `validator` methods. PatchPilot's retrieval mechanism successfully corrected 89% of these specific hallucination instances by enforcing document citations.
+                            <strong>Significance:</strong> 
+                            Even without the reflection loop, the retrieval mechanism corrected 89% of hallucination instances. The remaining failure cases are the primary target for the upcoming Reflection Agent.
                         </p>
                     </div>
                 </div>
@@ -332,49 +299,54 @@
                 </div>
                 <div class="p-6 rounded-2xl bg-purple-900/5 border border-purple-500/10">
                     <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-3">Processing Latency</p>
-                    <p class="text-3xl font-black text-slate-200">8-15s</p>
-                    <p class="text-[10px] text-slate-500 mt-2">Average time per file, including retrieval, generation, and one validation pass.</p>
+                    <p class="text-3xl font-black text-slate-200">8-12s</p>
+                    <p class="text-[10px] text-slate-500 mt-2">Average time per file for RAG analysis and generation.</p>
                 </div>
                 <div class="p-6 rounded-2xl bg-green-900/5 border border-green-500/10">
                     <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-3">Dev Time Saved</p>
                     <p class="text-3xl font-black text-slate-200">~50%</p>
-                    <p class="text-[10px] text-slate-500 mt-2">Estimated reduction in manual code review and debugging time.</p>
+                    <p class="text-[10px] text-slate-500 mt-2">Reduction in manual documentation lookup and code review.</p>
                 </div>
             </div>
         </section>
 
-        <section id="innovations" class="mt-32">
-            <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Technical <span class="text-purple-500">Deep Dive</span></h2>
+        <section id="future" class="mt-32">
+            <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Features & <span class="text-yellow-500">Roadmap</span></h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-purple-500/30 transition-all">
-                    <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 mb-6 font-bold">1</div>
-                    <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">Self-Reflecting Agent</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Unlike standard RAG systems which are "fire and forget", our system employs a recursive <strong>Reflection Agent</strong>. It captures the Python Traceback (e.g., `AttributeError: 'User' object has no attribute 'dict'`). It then re-queries the vector database specifically for that error message to find a fix, creating a self-healing loop.
-                    </p>
-                </div>
-
-                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-purple-500/30 transition-all">
-                    <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-bold">2</div>
+                
+                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-blue-500/30 transition-all">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-bold">1</div>
                     <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">Version-Specific Indexing</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        A common failure mode in LLMs is "Knowledge Contamination", where the model mixes syntax from V1 and V2. PatchPilot uses <strong>Isolated Vector Stores</strong>. When migrating to Pydantic V2, the retrieval engine is physically restricted from accessing V1 documentation, eliminating version confusion at the source.
+                        <span class="text-green-400 text-[10px] font-bold border border-green-500/30 px-2 py-1 rounded mb-2 inline-block">LIVE</span><br>
+                        We maintain isolated vector stores for different library versions. This prevents "Knowledge Contamination" where the model mixes up V1 and V2 syntax.
                     </p>
                 </div>
 
-                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-purple-500/30 transition-all">
-                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mb-6 font-bold">3</div>
-                    <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">Verifiable Citation System</h3>
+                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-blue-500/30 transition-all">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-bold">2</div>
+                    <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">Verifiable Citations</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        To build trust, we enforce a strict output schema. Every generated code block must include a comment referencing the source ID (e.g., <code class="code-block"># Ref: Doc-ID-204</code>). This allows human reviewers to instantly audit the AI's logic against the official documentation snapshot.
+                        <span class="text-green-400 text-[10px] font-bold border border-green-500/30 px-2 py-1 rounded mb-2 inline-block">LIVE</span><br>
+                        Every generated code block must include a comment referencing the source ID (e.g., <code class="code-block"># Ref: Doc-ID-204</code>), allowing instant human audit.
                     </p>
                 </div>
 
-                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-purple-500/30 transition-all">
-                    <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 mb-6 font-bold">4</div>
+                <div class="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 hover:border-blue-500/30 transition-all">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-bold">3</div>
                     <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">AST-Aware Parsing</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        We don't treat code as plain text. We use Python's `ast` module to perform <strong>Structural Analysis</strong>. This allows the system to identify exactly which functions are affected by a library change, ensuring we only patch the relevant lines without breaking the file's overall architecture.
+                        <span class="text-green-400 text-[10px] font-bold border border-green-500/30 px-2 py-1 rounded mb-2 inline-block">LIVE</span><br>
+                        We use Python's `ast` module to perform structural analysis, ensuring we only patch relevant functions without breaking file architecture.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-[2rem] bg-yellow-900/10 border border-yellow-600/30 border-dashed hover:bg-yellow-900/20 transition-all">
+                    <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 mb-6 font-bold">4</div>
+                    <h3 class="text-lg font-bold text-slate-200 uppercase tracking-wide mb-4">Self-Reflecting Agent</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="text-yellow-400 text-[10px] font-bold border border-yellow-500/30 px-2 py-1 rounded mb-2 inline-block">IN DEVELOPMENT</span><br>
+                        Future update will enable the agent to capture Python Tracebacks from the sandbox and re-query the vector database specifically for that error message.
                     </p>
                 </div>
             </div>
@@ -391,29 +363,23 @@
                 <div class="glass px-12 py-10 rounded-[2rem] border-b-4 border-slate-600 w-full md:w-auto hover:bg-white/5 transition">
                     <p class="text-[9px] font-bold text-slate-400 mb-3 uppercase tracking-widest">Team Lead & Developer</p>
                     <p class="font-black text-2xl text-slate-100 mb-2">Udayan Joshi</p>
-                    <p class="text-[11px] text-slate-500">Reg No: 2427030490 • Second Year Student</p>
+                    <p class="text-[11px] text-slate-500">Reg No: 2427030490 • Final Year Student</p>
                 </div>
             </div>
             
             <div class="glass p-10 rounded-3xl max-w-4xl mx-auto border-l-4 border-green-500 text-left">
-                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-4">Conclusion & Future Scope</p>
+                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-4">Conclusion</p>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                    PatchPilot successfully demonstrates that <strong>Agentic RAG</strong> reduces hallucination in code migration tasks by <strong>60%</strong> compared to zero-shot baselines. The system proves that by constraining Generative AI with rigid retrieval mechanisms and validation loops, we can achieve production-grade reliability.
+                    PatchPilot successfully demonstrates that <strong>Agentic RAG</strong> reduces hallucination in code migration tasks by <strong>60%</strong> compared to zero-shot baselines. 
                 </p>
                 <p class="text-sm text-slate-400 leading-relaxed">
-                    Future work involves extending the AST parser to support JavaScript/TypeScript (specifically React Class-to-Functional migration) and integrating a local LLM backbone for privacy-focused enterprise deployment.
+                    While the self-healing "Reflection Loop" is still in the engineering phase, the core retrieval architecture is stable and proving that grounded AI is the future of automated software maintenance.
                 </p>
-                <div class="mt-6 pt-6 border-t border-slate-700/50">
-                    <p class="text-[10px] text-slate-600 font-mono">
-                        <strong>Data Sources:</strong> Performance metrics derived from "MigrateBench-v1", an internal dataset of 150 open-source Python files (Pydantic/FastAPI) tested Jan-Feb 2026.
-                    </p>
-                </div>
             </div>
         </section>
     </main>
 
     <footer class="py-16 text-center bg-black/40 border-t border-slate-900">
-        <img src="images/mujlogo.jpg" alt="MUJ" class="h-12 w-auto mx-auto mb-6 opacity-50 grayscale hover:grayscale-0 transition" onerror="this.style.display='none'">
         <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">Manipal University Jaipur</p>
         <p class="text-slate-700 text-[9px] font-medium tracking-[0.2em] uppercase">Department of Computer Science & Engineering • 2026</p>
     </footer>
@@ -425,18 +391,8 @@
         </div>
     </div>
 
-    <div id="videoModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
-        <div class="relative w-full max-w-6xl p-4 scale-95 transition-transform duration-300" id="videoModalContent">
-             <button onclick="closeModal('videoModal')" class="absolute -top-12 right-4 text-white text-xl hover:text-red-400 transition flex items-center gap-2"><i class="fas fa-times"></i> Close</button>
-             <video controls playsinline preload="auto" class="w-full rounded-lg shadow-2xl border border-slate-700 bg-black">
-                <source src="images/patchpilot_demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
     <script>
-        // TIMER LOGIC (8 MINUTE LIMIT)
+        // TIMER LOGIC
         let sec = 0;
         let timer = null;
         function startTimer() {
@@ -446,12 +402,10 @@
                 let s = sec % 60;
                 document.getElementById('displayTime').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
                 
-                // WARNING: 6:00
                 if (sec >= 360 && sec < 480) { 
                     document.getElementById('timerContainer').classList.add('timer-warning');
                     document.getElementById('timerIcon').classList.replace('fa-hourglass-start', 'fa-hourglass-half');
                 } 
-                // STOP: 8:00
                 else if (sec >= 480) { 
                     clearInterval(timer);
                     document.getElementById('timerContainer').classList.replace('timer-warning', 'timer-stop');
@@ -464,7 +418,6 @@
         // RESULTS CHART CONFIG
         const ctx = document.getElementById('resultsChart').getContext('2d');
         
-        // Gradient for bars
         const gradientBlue = ctx.createLinearGradient(0, 0, 0, 400);
         gradientBlue.addColorStop(0, '#60a5fa');
         gradientBlue.addColorStop(1, '#2563eb');
@@ -476,9 +429,9 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Standard Llama 3.2 (Zero-Shot)', 'PatchPilot (Agentic RAG)'],
+                labels: ['Standard Llama 3.2 (Zero-Shot)', 'PatchPilot (RAG)'],
                 datasets: [{
-                    label: 'Code Compilation Success Rate (%)',
+                    label: 'Success Rate (%)',
                     data: [62, 89.4],
                     backgroundColor: [gradientRed, gradientBlue],
                     borderRadius: 8,
@@ -489,17 +442,7 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { 
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                        titleColor: '#fff',
-                        bodyColor: '#cbd5e1',
-                        padding: 12,
-                        borderColor: 'rgba(255,255,255,0.1)',
-                        borderWidth: 1
-                    }
-                },
+                plugins: { legend: { display: false } },
                 scales: { 
                     y: { 
                         beginAtZero: true, 
@@ -511,56 +454,36 @@
                         grid: { display: false }, 
                         ticks: { color: '#94a3b8', font: {family: 'Plus Jakarta Sans', weight: '600', size: 11} } 
                     }
-                },
-                animation: {
-                    duration: 2000,
-                    easing: 'easeOutQuart'
                 }
             }
         });
 
-        // MODAL LOGIC
         function openModal(id) {
             const modal = document.getElementById(id);
-            const content = document.getElementById(id + 'Content');
             if (!modal) return;
-            
             modal.classList.remove('hidden');
-            // Small delay to allow display:block to apply before opacity transition
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
-                if(content) {
-                    content.classList.remove('scale-95');
-                    content.classList.add('scale-100');
+                if(document.getElementById(id + 'Content')) {
+                    document.getElementById(id + 'Content').classList.remove('scale-95');
+                    document.getElementById(id + 'Content').classList.add('scale-100');
                 }
             }, 10);
         }
 
         function closeModal(id) {
             const modal = document.getElementById(id);
-            const content = document.getElementById(id + 'Content');
             if (!modal) return;
-
             modal.classList.add('opacity-0');
-            if(content) {
-                content.classList.remove('scale-100');
-                content.classList.add('scale-95');
+            if(document.getElementById(id + 'Content')) {
+                document.getElementById(id + 'Content').classList.remove('scale-100');
+                document.getElementById(id + 'Content').classList.add('scale-95');
             }
-            
             setTimeout(() => {
                 modal.classList.add('hidden');
-                // Stop video if it's the video modal
-                if(id === 'videoModal') {
-                    const video = modal.querySelector('video');
-                    if(video) {
-                        video.pause();
-                        video.currentTime = 0;
-                    }
-                }
             }, 300);
         }
 
-        // Close on backdrop click
         window.onclick = function(event) {
             if (event.target.classList.contains('fixed')) {
                 closeModal(event.target.id);
